@@ -1,0 +1,27 @@
+mat-form-field {
+  height: 3em;
+  font-size: 1em;
+  padding-left: .4em;
+}
+mat-card {
+  /*  max-width: 300px;  */
+    margin-bottom: 50px;
+    float: left;
+}
+.full-with-field {
+    width: 100%;
+}
+.okuri {
+  height: 5em;
+  margin-top: 1em;
+}
+
+  /*  .textarea {position: relative;}
+
+.textarea mat-card-content{
+  position: absolute;
+  top: 0; 
+  right: 0;
+  bottom: 0;
+  left: 0;
+  }  */
