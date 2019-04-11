@@ -13,11 +13,12 @@ mat-card {
 }
 .okuri {
   height: 5em;
-  margin-top: 1em;
+/*  margin-top: 1em;*/
 }
-
-  /*  .textarea {position: relative;}
-
+.biko {
+  padding-bottom: 1em;
+}
+/*
 .textarea mat-card-content{
   position: absolute;
   top: 0; 
