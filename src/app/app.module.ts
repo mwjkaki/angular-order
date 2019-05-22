@@ -25,6 +25,7 @@ import { MatToolbarModule,
 
 import { AppComponent } from './app.component';
 import { OrderHeaderComponent } from './order/order-header.component';
+import { OrderDateComponent } from './order/order-date.component';
 
 @NgModule({
   imports:[
@@ -50,7 +51,7 @@ import { OrderHeaderComponent } from './order/order-header.component';
     MatMenuModule,
     MatDialogModule,
     ReactiveFormsModule ],
-  declarations: [ AppComponent, OrderHeaderComponent ],
+  declarations: [ AppComponent, OrderHeaderComponent, OrderDateComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
