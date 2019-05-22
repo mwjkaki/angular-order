@@ -13,6 +13,8 @@ export class OrderHeaderComponent implements OnInit {
     scode:['', Validators.required],　 
     ncode:['', Validators.required],
     nadr:['', Validators.required],
+    tcode:['', Validators.required],
+    bikou:['', Validators.required],
 
   });
   constructor(private fb: FormBuilder) {}

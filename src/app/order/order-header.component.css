@@ -3,11 +3,6 @@ mat-form-field {
   font-size: 1em;
   padding-left: .4em;
 }
-mat-card {
-  /*  max-width: 300px;  */
-    margin-bottom: 50px;
-    float: left;
-}
 .full-with-field {
     width: 100%;
 }

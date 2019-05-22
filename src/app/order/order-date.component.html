@@ -1,3 +1,37 @@
-<p>
-order-date works!
-</p>
+<form [formGroup]="orderDate">
+  <div fxLayout="column">
+    <mat-form-field>
+      <mat-label>受付日</mat-label>
+      <input matInput formControlName="sday" type="text" [matDatepicker]="DayPcr"> 
+      <mat-datepicker-toggle matSuffix [for]="DayPcr"></mat-datepicker-toggle>
+      <mat-datepicker #DayPcr></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>出荷予定日</mat-label>
+      <input matInput formControlName="yday" type="text" [matDatepicker]="yDayPcr" required>
+      <!-- <mat-error *ngIf="mindate.invalid && mindate.errors.required">
+        日付入力必須！
+      </mat-error> -->
+      <mat-datepicker-toggle matSuffix [for]="yDayPcr"></mat-datepicker-toggle>
+      <mat-datepicker #yDayPcr></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>出荷日</mat-label>
+      <input matInput formControlName="sday" type="text" [matDatepicker]="sDayPcr"> 
+      <mat-datepicker-toggle matSuffix [for]="sDayPcr"></mat-datepicker-toggle>
+      <mat-datepicker #sDayPcr></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>売上日</mat-label>
+      <input matInput formControlName="sday" type="text" [matDatepicker]="uDayPcr"> 
+      <mat-datepicker-toggle matSuffix [for]="uDayPcr"></mat-datepicker-toggle>
+      <mat-datepicker #uDayPcr></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>入金予定日</mat-label>
+      <input matInput formControlName="sday" type="text" [matDatepicker]="nDayPcr"> 
+      <mat-datepicker-toggle matSuffix [for]="nDayPcr"></mat-datepicker-toggle>
+      <mat-datepicker #nDayPcr></mat-datepicker>
+    </mat-form-field>
+  </div>
+</form>           
