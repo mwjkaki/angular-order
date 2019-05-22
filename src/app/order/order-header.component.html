@@ -1,14 +1,14 @@
 <form [formGroup]="orderHead">
-  <mat-form-field class="full-width">
-    <input matInput placeholder="受注番号" formControlName="denno">
+	<mat-form-field class="full-width">
+		<input matInput placeholder="受注番号" formControlName="denno">
   </mat-form-field>
   <mat-form-field class="full-width">
     <input matInput placeholder="担当者" formControlName="tcode" required>
   </mat-form-field>
   <mat-form-field class="full-width">
-    <mat-select placeholder="売上出荷区分" [formControl]="skbnCtrl" required>
-      <mat-option *ngFor="let skbn of skubun" [value]="skbn.value">
-          {{ skbn.viewValue }}
+    <mat-select placeholder="売上出荷区分" formControlName="skbn" required>
+      <mat-option *ngFor="let s_skbn of skubun" [value]="s_skbn.value">
+          {{ s_skbn.viewValue }}
       </mat-option>
      </mat-select>
   </mat-form-field>　　
@@ -31,4 +31,4 @@
   <mat-form-field class="full-with-field okuri">
     <textarea matInput placeholder="送り先住所" class="full-with-field okuri"></textarea>
   </mat-form-field>　　　
-</form>  
+</form>

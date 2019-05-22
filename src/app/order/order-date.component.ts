@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { BaseForm } from "./base-form";
 import { DateAdapter, NativeDateAdapter } from '@angular/material';
-import { FormBuilder, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 export class MyDateAdapter extends NativeDateAdapter {
   getDateNames(): string[] {
@@ -17,22 +18,28 @@ export class MyDateAdapter extends NativeDateAdapter {
   templateUrl: './order-date.component.html',
   styleUrls: ['./order-date.component.css'],
   providers: [
-    {provide: DateAdapter, useClass: MyDateAdapter}
+    { provide: DateAdapter, useClass: MyDateAdapter }
   ]
 })
-export class OrderDateComponent implements OnInit {
-  　orderDate = this.fb.group({
-    day:['', Validators.required],
-    yday:['', ''],
-    sday:['', ''],
-    uday:['', ''],
-    nday:['', '']
+export class OrderDateComponent extends BaseForm implements OnInit {
+  // 親コンポーネントにこのフォームコンポーネントをemitするための@Output()
+  @Output() formReady = new EventEmitter<AbstractControl>();
+  // フォームの定義 
+  orderDate: AbstractControl = this.fb.group({
+    day: ['', Validators.required],
+    yday: ['', ''],
+    sday: ['', ''],
+    uday: ['', ''],
+    nday: ['', '']
   });
-  constructor(dateAdapter: DateAdapter<NativeDateAdapter>,private fb: FormBuilder) {
+  constructor(dateAdapter: DateAdapter<NativeDateAdapter>, private fb: FormBuilder) {
+    super();
     dateAdapter.setLocale('jp-JA');
-   }
+  }
 
   ngOnInit() {
+    this.formReady.emit(this.orderDate);
   }
+
 
 }
