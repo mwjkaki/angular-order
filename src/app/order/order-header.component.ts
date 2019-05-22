@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'order-header',
@@ -9,14 +9,21 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class OrderHeaderComponent implements OnInit {
 　orderHead = this.fb.group({
     denno: null,
+    tcode:['', Validators.required],
+    skbn:['', Validators.required],
     mcode:['', Validators.required],
     scode:['', Validators.required],　 
     ncode:['', Validators.required],
     nadr:['', Validators.required],
-    tcode:['', Validators.required],
     bikou:['', Validators.required],
 
   });
+  skbnCtrl = new FormControl('', [Validators.required]);
+  skubun = [
+    {value: '0', viewValue: '出荷売上'},
+    {value: '1', viewValue: '売上のみ'},
+    {value: '2', viewValue: '出荷のみ'}
+  ];
   constructor(private fb: FormBuilder) {}
   ngOnInit() {
   }

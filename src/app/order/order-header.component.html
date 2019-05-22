@@ -4,7 +4,14 @@
   </mat-form-field>
   <mat-form-field class="full-width">
     <input matInput placeholder="担当者" formControlName="tcode" required>
-  </mat-form-field>　
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-select placeholder="売上出荷区分" [formControl]="skbnCtrl" required>
+      <mat-option *ngFor="let skbn of skubun" [value]="skbn.value">
+          {{ skbn.viewValue }}
+      </mat-option>
+     </mat-select>
+  </mat-form-field>　　
   <mat-form-field class="full-with-field">
     <input matInput placeholder="受注先" formControlName="mcode" required>
   </mat-form-field>　
